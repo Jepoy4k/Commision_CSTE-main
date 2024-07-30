@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="./css/profile-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <main>
+        <div class="profile-card">
+            <h1>Profile Information</h1>
+            <div class="profile-info">
+                <label for="first-name">First Name:</label>
+                <p id="first-name"><?php echo htmlspecialchars($first_name); ?></p>
+            </div>
+            <div class="profile-info">
+                <label for="last-name">Last Name:</label>
+                <p id="last-name"><?php echo htmlspecialchars($last_name); ?></p>
+            </div>
+            <div class="profile-info">
+                <label for="email">Email Address:</label>
+                <p id="email"><?php echo htmlspecialchars($email); ?></p>
+            </div>
+            <div class="profile-info">
+                <label for="contact-number">Contact Number:</label>
+                <p id="contact-number"><?php echo htmlspecialchars($contact_number); ?></p>
+            </div>
+            <div class="profile-info">
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" value="<?php echo htmlspecialchars($password); ?>" readonly>
+                    <i class="fa fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+                </div>
+            </div>
+            <button class="logout-button" onclick="window.location.href='logout.php'">Logout</button>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordInput = document.getElementById('password');
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>
