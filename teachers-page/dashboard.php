@@ -59,7 +59,7 @@ $conn->close();
             <ul>
                 <li><a href="#"><i class="fa fa-bell"></i> </a></li>
                 <li><a href="dashboard.php">  HOME </i> </a></li>
-                <li><a href="#"> PROFILE </i> </a></li>
+                <li><a href="profiles.html"> PROFILE </i> </a></li>
                 <li><a href="../index.html" class="logout">Logout</a></li>
             </ul>
         </nav>
